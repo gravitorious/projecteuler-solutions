@@ -67,6 +67,11 @@ void solve(){
     };
     int ans = -1;
     for(int i = 100; i <= 999; i++){
+    	//let ans / i = k. 
+    	//if k > i, then k * i is at least ans (is equal to ans when i divides ans)
+    	//so from i to k - 1, the (i * (k - 1)) is 
+    	//smaller than ans so we don't need to 
+    	//check those products and we choose to start from k. 
   		for(int j = max(ans / i, i); j <= 999; j++){
   			if(isp(i * j)) ans = max(ans, i * j);
   		}	
